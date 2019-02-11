@@ -31,7 +31,7 @@ push-to-registry:
 push-to-github:
   stage: deploy
   variables:
-    GITHUB_REPO_NAME: ew-market-lib
+    GITHUB_REPO_NAME: ew-utils-general-lib
     GIT_STRATEGY: clone
   only:
     - tags
