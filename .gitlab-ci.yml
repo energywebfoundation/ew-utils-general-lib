@@ -35,7 +35,7 @@ push-to-github:
     GIT_STRATEGY: clone
   only:
     - tags
-    - /v\d+.\d+.\d+$/
+    - /v\d+.\d+.\d+$/gm
   tags:
     - short-jobs
   # dependencies:
