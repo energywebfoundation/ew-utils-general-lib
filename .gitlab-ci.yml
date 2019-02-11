@@ -45,5 +45,5 @@ push-to-github:
     - export GIT_SSH_COMMAND="/usr/bin/ssh -o StrictHostKeyChecking=no -i /gitkey"
     - git remote add external git@github.com:energywebfoundation/${GITHUB_REPO_NAME}.git
     - git push --force external HEAD:refs/heads/master
-    - git push --force external --tags
+    - git push --force external --tag $CI_COMMIT_TAG
     - rm /gitkey
