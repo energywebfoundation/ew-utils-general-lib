@@ -34,7 +34,6 @@ push-to-github:
     GITHUB_REPO_NAME: ew-utils-general-lib
     GIT_STRATEGY: clone
   only:
-    - tags
     - '/^v[0-9]*\.[0-9]*\.[0-9]*$/'
   tags:
     - short-jobs
