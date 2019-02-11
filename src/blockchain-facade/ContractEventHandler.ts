@@ -1,6 +1,4 @@
 import * as Configuration from './Configuration';
-
-
 export class ContractEventHandler {
 
     lastBlockChecked: number;
