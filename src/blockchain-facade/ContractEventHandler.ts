@@ -15,13 +15,11 @@
 // @authors: slock.it GmbH; Heiko Burkhardt, heiko.burkhardt@slock.it; Martin Kuechler, martin.kuchler@slock.it
 
 import * as Configuration from './Configuration';
-import Contract from 'web3/eth/contract';
-
 export class ContractEventHandler {
 
     lastBlockChecked: number;
     unhandledEvents: any[];
-    contractInstance: Contract;
+    contractInstance: any;
 
     onEventRegistry: any[];
     onAnyContractEventRegistry: any[];
@@ -39,7 +37,9 @@ export class ContractEventHandler {
     async tick(configuration: Configuration.Entity) {
 
         const blockNumber = await configuration.blockchainProperties.web3.eth.getBlockNumber();
-        const events = await this.contractInstance.getPastEvents('allEvents', { fromBlock: this.lastBlockChecked + 1, toBlock: blockNumber });
+        const events = await this.contractInstance
+            .getWeb3Contract()
+            .getPastEvents('allEvents', { fromBlock: this.lastBlockChecked + 1, toBlock: blockNumber });
         this.unhandledEvents = events.reverse().concat(this.unhandledEvents);
         this.lastBlockChecked = blockNumber > this.lastBlockChecked ? blockNumber : this.lastBlockChecked;
         this.walkThroughUnhandledEvent();
