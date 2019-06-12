@@ -6,10 +6,10 @@ export enum TimeFrame {
 }
 
 export enum Currency {
-  Euro,
+  EUR,
   USD,
-  SingaporeDollar,
-  Ether
+  SGD,
+  THB
 }
 
 export enum AssetType {
