@@ -16,6 +16,7 @@ pragma solidity ^0.5.0;
 
 contract Currency {
     enum Fiat {
+        NONE,
         EUR,
         USD,
         SGD,

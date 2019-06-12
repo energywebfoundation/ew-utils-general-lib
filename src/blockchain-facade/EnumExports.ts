@@ -6,6 +6,7 @@ export enum TimeFrame {
 }
 
 export enum Currency {
+  NONE,
   EUR,
   USD,
   SGD,
