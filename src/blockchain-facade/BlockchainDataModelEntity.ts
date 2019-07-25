@@ -54,15 +54,6 @@ export abstract class Entity {
     url?: string,
     debug?: boolean
   ): IOffChainProperties {
-    const axiosurl = url ? url : this.getUrl();
-
-    validateJson(
-      offChainProperties,
-      schema,
-      axiosurl,
-      this.configuration.logger
-    );
-
     if (this.configuration.offChainDataSource) {
       if (onChainProperties.url) {
         throw new Error('URL should not be set');
