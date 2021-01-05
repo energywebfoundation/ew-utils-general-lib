@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/energywebfoundation/ew-utils-general-lib#readme",
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.21.1",
     "jsonschema": "1.2.4",
     "ew-utils-general-precise-proofs": "0.3.0",
     "web3": "1.0.0-beta.37",
